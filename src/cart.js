@@ -1,5 +1,3 @@
-import { getBikes } from './bikeService.js';
-
 let currentRental = null; // Solo permitiremos alquilar una bicicleta a la vez para simplificar
 
 export function getRental() {
