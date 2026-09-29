@@ -1,0 +1,23 @@
+[
+  {
+    "id": "R1",
+    "adr": "ADR-001",
+    "modulo": "bikeService",
+    "no_puede_importar": ["ui", "cart", "app"],
+    "porque": "El inventario de bicicletas debe poder cambiar (memoria hoy, base de datos o API manana) sin arrastrar la pantalla ni el alquiler activo. Si el inventario conoce a la interfaz, cambiar de donde salen los datos rompe la pantalla."
+  },
+  {
+    "id": "R2",
+    "adr": "ADR-002",
+    "modulo": "cart",
+    "no_puede_importar": ["bikeService", "ui", "app"],
+    "porque": "El alquiler activo del cliente no puede depender del inventario: si cart llama a bikeService, cambiar las reglas de alquiler (varias bicicletas, tiempo, reservas) obliga a tocar dos modulos a la vez y el cliente puede quedar con un alquiler que no coincide con la disponibilidad real."
+  },
+  {
+    "id": "R3",
+    "adr": "ADR-003",
+    "modulo": "app",
+    "no_puede_importar": ["bikeService", "cart"],
+    "porque": "El punto de entrada solo arranca la aplicacion. Si app.js empieza a hablar con el inventario o el alquiler, la logica de negocio se reparte en dos sitios y nadie sabe donde se decide que una bicicleta se puede alquilar."
+  }
+]

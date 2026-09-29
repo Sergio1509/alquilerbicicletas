@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alquiler de Bicicletas Mínimo</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 20px; background: #f4f4f9; color: #333; }
+        header { text-align: center; margin-bottom: 20px; }
+        .container { display: flex; gap: 20px; max-width: 900px; margin: 0 auto; }
+        .section { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); flex: 1; }
+        ul { list-style: none; padding: 0; }
+        li { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid #eee; }
+        button { background: #28a745; color: white; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer; }
+        button.danger { background: #dc3545; }
+        button:hover { opacity: 0.9; }
+        .status { font-weight: bold; }
+        .available { color: #28a745; }
+        .rented { color: #dc3545; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>🚲 Alquiler de Bicicletas Express</h1>
+    </header>
+
+    <div class="container">
+        <!-- Sección de Bicicletas Disponibles -->
+        <div class="section">
+            <h2>Bicicletas Disponibles</h2>
+            <ul id="bike-list"></ul>
+        </div>
+
+        <!-- Sección del Carrito / Alquiler Activo -->
+        <div class="section">
+            <h2>Tu Alquiler Actual</h2>
+            <ul id="cart-list"></ul>
+            <p id="cart-total"></p>
+        </div>
+    </div>
+
+    <!-- Carga del punto de entrada con Módulos ES6 -->
+    <script type="module" src="./src/app.js"></script>
+</body>
+</html>
